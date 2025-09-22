@@ -1,0 +1,119 @@
+.materials {
+    margin: 0 auto;
+    height: 399px;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.materials .text_wrapper {
+    width: 400px;
+    height: 275px;
+    margin: 0 57px 0 0;
+}
+
+.materials .text_wrapper .text_1 {
+    font-family: 'Merriweather';
+    font-size: 30px;
+    font-weight: 900;
+    color: #222F33;
+    padding: 0 0 15px 0;
+}
+
+.materials .text_wrapper .text_2 {
+    font-family: 'Rubik';
+    font-size: 14px;
+    font-weight: 400;
+    color: #646D70;
+    padding: 0 0 41px 0;
+    line-height: 26px;
+}
+.materials .text_wrapper .btn {
+    font-family: 'Rubik';
+    font-size: 12px;
+    font-weight: 500;
+    color: #606B74;
+    padding: 10px 14px;
+    background-color: transparent;
+    border-radius: 4px;
+    border-color: #646D70;
+}
+
+.material_img {
+    width: 350px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.innovative {
+    background-color: #222F33;
+    
+}
+
+.innovative .text_wrapper_1 {
+    width: 803px;
+    margin: 0 auto;
+    padding: 70px 0;
+}
+
+.innovative .text_wrapper_2 {
+    opacity: 0.7;
+    width: 803px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.innovative .text_1 {
+    font-family: 'Merriweather';
+    font-size: 30px;
+    font-weight: 900;
+    color: #FFFFFF;
+    padding: 0 0 15px 0;
+}
+
+.innovative .text_2 {
+    width: 380px;
+    font-family: 'Rubik';
+    font-size: 14px;
+    font-weight: 400;
+    color: #FFFFFF;
+    padding: 0 0 41px 0;
+    line-height: 24px;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+}
+
+.features_grid {
+    padding-top: 89px;
+    padding-bottom: 89px;
+    padding-left: 75px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 40px;
+}
+
+.features_img {
+    margin-top: 85px;
+    margin-bottom: 85px;
+    width: 355px;
+    height: 362px;
+    object-fit: cover;
+}
+
+.features .section .text_1 {
+    font-family: 'Merriweather';
+    font-weight: 900;
+    font-size: 18px;
+    color: #222F33;
+}
+
+.features .section .text_2 {
+    font-family: 'Rubik';
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 22px;
+    color: #646D70;
+}
