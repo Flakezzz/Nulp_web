@@ -1,229 +1,219 @@
-/* ================================== */
-/* 0. ГЛОБАЛЬНІ НАЛАШТУВАННЯ */
-/* ================================== */
-*, *::before, *::after {
-    box-sizing: border-box; 
-}
-html {
-    /* Обмежуємо скрол по горизонталі */
-    overflow-x: hidden; 
-}
-
-/* Приховуємо чекбокс */
-#burger_toggle {
-    display: none;
-}
-/* Приховуємо label на десктопі за замовчуванням */
-label {
-    display: none;
-}
-
-/* ================================== */
-/* 1. HEADER та NAV (Десктопний вигляд) */
-/* ================================== */
 .header {
-    color: white;
-    height: 100vh; /* Залишаємо 100vh для повної висоти екрана */
-    background-image:
-    linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("../img/1.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    /* ВИПРАВЛЕНО: Прибираємо фіксований padding, залишаємо його в nav_wrapper */
-    padding: 0; 
-    
-    /* Flexbox для вертикального вирівнювання контенту */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Навігація зверху, контент знизу */
+  color: white;
+  height: 100vh;
+  background-image:
+  linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("../img/1.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0 50px;
+  box-sizing: border-box;
 }
 
 .nav_wrapper {
-    /* ВИПРАВЛЕНО: Використовуємо % для адаптивності. 100px — це близько 8-10% на типовому екрані */
-    padding: 35px 8vw; 
-    width: 100%;
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; /* Вирівнюємо по центру */
+  padding: 35px 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start; 
 }
 
 .icon {
-    /* ВИПРАВЛЕНО: Використовуємо vw для ширини іконки */
-    width: 12vw; /* Наприклад, 12vw */
-    max-width: 150px;
-    height: auto;
+  margin: auto 0;
+  width: 150px;
+  height: auto;
 }
 
 .nav .sections {
-    /* ВИПРАВЛЕНО: Використовуємо відносні відступи та розмір шрифту */
-    font-size: 0.9vw; /* Розмір шрифту, залежний від ширини екрана */
-    margin: 10px 3vw; 
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    /* ... інші стилі ... */
+  align-items: center;
+  font-family: 'Rubik';
+  font-weight: 500;
+  font-size: 12px;
+  margin: 10px 40px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
 }
 
 .contact {
-    /* ВИПРАВЛЕНО: Використовуємо відносні розміри для кнопки */
-    width: 7vw;
-    min-width: 90px; /* Мінімальна ширина, щоб не стискалася занадто сильно */
-    height: 34px;
-    margin-left: 1.5vw;
-    padding: 10px 1.5vw;
-    /* ... інші стилі ... */
+  font-family: 'Rubik';
+  width: 90px;
+  height: 34px;
+  border-radius: 3px;
+  border: none;
+  color: gray;
+  margin-left: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
 }
-/* ... Hover стилі без змін ... */
 
-/* ================================== */
-/* 2. HEADER CONTENT */
-/* ================================== */
-
-.content_wrapper {
-    /* ВИПРАВЛЕНО: max-width замість width і відносні відступи */
-    max-width: 880px; 
-    width: 90%; /* Займає 90% від ширини header */
-    
-    /* Відступи для центрування по горизонталі та знизу */
-    margin: 0 auto; 
-    padding: 0 0 150px 0; /* Прибираємо білі проміжки зверху, залишаємо простір знизу */
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.contact:hover {
+    background-color: black;
+    color: white;
 }
 
 .text_wrapper {
-    /* ВИПРАВЛЕНО: Використовуємо max-width для адаптивності */
-    max-width: 440px; 
-    width: 100%; /* Займає всю доступну ширину */
-    padding: 0 1vw; /* Невеликі відступи */
+  width: 440px;
 }
 
 .text_1 {
-    font-size: 1.3vw; /* Відносний розмір шрифту */
-    min-font-size: 16px;
-    padding: 0 0 1.5vw 0;
+  font-family: 'Merriweather';
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0 0 15px 0;
 }
 
 .text_2 {
-    font-size: 2.5vw; /* Відносний розмір шрифту */
-    min-font-size: 30px;
+  font-family: 'Merriweather';
+  font-size: 30px;
+  font-weight: 900;
 }
 
-/* ... Всі інші стилі play_btn, btn_wrapper без змін, оскільки їх розміри фіксовані і це добре ... */
+.btn_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn_wrapper:hover {
+  color: black;
+}
+
+.play_btn {
+  width: 32px;
+  height: 32px;
+  background-color: white; 
+  border: none;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.play_btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid black;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  transition: border-left-color 0.3s ease;
+}
+
+.play_btn:hover {
+  background-color: black;
+}
+
+.play_btn:hover::before {
+  border-left-color: white;
+}
+
+.btn_text {
+  font-family: 'Rubik';
+  transition: color 0.3s ease;
+}
 
 
-/* ================================== */
-/* 3. MEDIA QUERY (Мобільна логіка: до 1100px) */
-/* ================================== */
+.content_wrapper {
+  width: 880px;
+  margin: 150px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#burger_toggle {
+  display: none;
+}
+
+label[for="burger_toggle"] {
+  padding: 5px;
+  display: none;
+  position: relative;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+label[for="burger_toggle"] span,
+label[for="burger_toggle"] span::before,
+label[for="burger_toggle"] span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+label[for="burger_toggle"] span::before {
+  content: '';
+  top: -8px;
+}
+
+label[for="burger_toggle"] span::after {
+  content: '';
+  top: 8px;
+}
+
 @media (max-width: 1100px) {
-    
-    /* Забезпечуємо відображення кнопки та її z-index */
-    label {
-        position: relative;
-        display: block; 
-        height: 25px;
-        width: 30px;
-        z-index: 100;
-        cursor: pointer;
-    }
-    
-    /* Скидаємо стилі для мобільної навігації */
-    .nav_wrapper {
-        padding: 35px 5vw; /* Зменшуємо відступи на мобільному */
-        align-items: center; 
-    }
-    
-    .icon {
-        width: 15vw; /* Зменшуємо іконку для мобільного */
-        max-width: 150px;
-    }
-    
-    /* Ховаємо десктопну навігацію */
-    .nav {
-        display: none;
-    }
+  label[for="burger_toggle"] {
+    display: block;
+  }
 
-    /* Стилі для анімації бургер-іконки (ваші стилі, без змін) */
-    label span { top: 11px; }
-    label::after, label::before, label span {
-        position: absolute; width: 100%; height: 3px; background-color: white; transition: 0.3s;
-    }
-    label::before { content: ""; top: 0; }
-    label::after { content: ""; bottom: 0; }
-    #burger_toggle:checked ~ label::after { transform: rotate(45deg); bottom: 10px; }
-    #burger_toggle:checked ~ label::before { transform: rotate(-45deg); top: 12px; }
-    #burger_toggle:checked ~ label span { opacity: 0; }
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background-color: rgba(25, 25, 25, 0.95);
+    padding: 100px 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    transition: right 0.4s ease-in-out;
+    z-index: 1000;
+  }
 
+  .nav .sections {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .nav .contact {
+     margin-left: 0;
+     font-size: 13px;
+  }
 
-    /* ================================== */
-    /* ЛОГІКА ВИСУВНОГО МЕНЮ (.nav) - ВКЛЮЧАЄМО FLEXBOX */
-    /* ================================== */
-    .nav {
-        /* ВИПРАВЛЕНО: Повертаємо display: flex, бо на десктопі він був display: none; */
-        display: flex; 
-        
-        position: fixed; 
-        top: 0; 
-        /* ВИПРАВЛЕНО: Використовуємо vw для ширини */
-        right: -80vw; /* Сховано: 80vw - ширина меню */
-        width: 80vw; 
-        max-width: 280px; /* Обмежуємо максимальну ширину */
-        height: 100vh;
-        background-color: rgba(30, 30, 30, 0.95);
-        padding-top: 80px; 
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.6);
-        z-index: 95;
-        transition: right 0.4s ease-in-out; 
-        
-        flex-direction: column;
-        align-items: stretch;
-    }
-    
-    /* ГОЛОВНА ЛОГІКА: Показуємо меню */
-    #burger_toggle:checked ~ .nav {
-        right: 0; 
-    }
-    
-    .nav .sections {
-        padding: 15px 30px;
-        margin: 0; 
-        font-size: 16px; /* Фіксований розмір шрифту на мобільному */
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    } 
-    
-    .contact {
-        margin: 20px 30px; 
-        width: auto;
-        height: auto;
-        padding: 10px 20px;
-        text-align: center;
-    }
-    
-    /* ================================== */
-    /* Адаптація контенту header */
-    /* ================================== */
-    .content_wrapper {
-        /* Змінюємо розташування та відступи */
-        padding: 0 5vw 50px 5vw; 
-        flex-direction: column; 
-        width: 100%;
-        max-width: 100%;
-        margin: 0 auto;
-        align-items: flex-start;
-    }
-    
-    .text_wrapper {
-        width: 100%;
-        max-width: none;
-    }
+  #burger_toggle:checked ~ .nav {
+    right: 0;
+  }
 
-    .text_1 {
-        font-size: 16px; /* Фіксуємо розмір на мобільному */
-    }
+  #burger_toggle:checked ~ label[for="burger_toggle"] span {
+    background-color: transparent;
+  }
 
-    .text_2 {
-        font-size: 28px; 
-    }
+  #burger_toggle:checked ~ label[for="burger_toggle"] span::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  #burger_toggle:checked ~ label[for="burger_toggle"] span::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+}
+
+.nav_wrapper {
+  align-items: center;
 }
